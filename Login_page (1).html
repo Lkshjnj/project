@@ -1,0 +1,113 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body{
+            background: url('https://th.bing.com/th/id/R.ff78826d2a94639d0ba40d36401033ef?rik=W1a9J7VeZdmDeg&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2fc%2fe%2fe%2f1523513-airplane-wallpapers-1920x1080-4k.jpg&ehk=78%2fjsHbvmV2%2fdxBW83PjtbUGotf866pjj2JS%2fhZYe9M%3d&risl=&pid=ImgRaw&r=0');
+	        background-size: cover;
+            opacity: 1.6;
+        }
+        #whole{
+            align-items: center;
+        }
+        #container{
+            margin-top: 70px;
+            margin-left: 450px;
+            text-align: center;
+            width: 40%;
+            height:90%;
+            background-color: rgb(237, 244, 244);
+            border: 3px solid black;
+            border-radius: 30px;
+        }
+        #container table{
+            margin-left: 100px;
+        }
+        #container input[type = "text"], #container input[type = "password"]{
+            border-radius: 24px;
+            text-align: center;
+            width: auto;
+            border: 2px solid black;
+        }
+        #container input[type="submit"]{
+            border: 2px solid black;
+            font-size: 20px; 
+            margin-left: 200px; 
+            border-radius: 24px;
+        }
+        #container input[type = "submit"]:hover{
+            font-size: 21px;
+            background: rgb(100, 100, 188);
+
+        }
+        #container td{
+            text-align: center;
+        }
+        
+        #container h1{
+            margin-top: 20px;
+        }
+        #log{
+            float: right;
+            margin-right: 40px;
+            color: white;
+            background-color: goldenrod;
+            padding: 13px;
+            size: xx-large;
+        }
+    </style>
+    <script>
+        function check(){
+            var option = document.getElementById("selection").value;
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("pass").value;
+            if(option = "admin" && username == "admin" && password == 1234){
+                window.open("home.html");
+                alert("Login succesfully as admin");
+            }
+            // else if (option = "patient" && username == "patient" && password == 5678){
+            //     alert("Login succesfully as patient");
+            // }
+            else{
+                alert("LOGIN FAILED! No account with these credentials was found.");
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <div id = "container">
+    <form action="Login_page.html">
+        <br>
+        <!-- <img src="https://uxwing.com/wp-content/themes/uxwing/download/21-medical-science-lab/doctor.png" 
+        alt="ADCE Hospital" width="150px" height = "150px"> -->
+        <h1>GUEST LOGIN</h1>
+        <table width = "400px" height = " 300px">
+        <tr><td fon>
+        <b style="font-size: 20px;">Login as</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <select name = "option" id = "selection" style="height: 30px; width: 180px;">
+            <option value="sel">--select--</option>
+            <option value="admin">GUEST</option>
+            <option value="Patient">STAFF</option>
+        </select>
+        </td></tr>
+        <tr><td>
+        <b style="font-size: 20px;">Username</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id = "username" type="text">
+        </td></tr>
+        <tr>
+        <td>
+        <b style="font-size: 20px;">Password</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id = "pass" type="password">
+        </td>
+        </tr>
+        </table>
+        <input type="submit" value="LOGIN" onclick="check()" id="log">
+        <span style="font-size:20px ; float: right; margin-right: 20px;"> New Member? <a href="registe.html">Register</a></span>   
+    </form>
+</div>
+</body>
+</html>
